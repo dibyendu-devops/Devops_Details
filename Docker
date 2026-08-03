@@ -12,3 +12,46 @@ Isolation: Each container runs independently, preventing conflicts between appli
 Efficiency: Containers share the host operating system kernel, making them lighter and faster than traditional virtual machines.
 Better resource control: CPU, memory, and storage limits can be assigned to individual containers, improving resource utilization.
 Easy scalability: Applications can be scaled horizontally by starting multiple container instances, making them well suited for cloud-native and microservices architectures.
+
+Components of the Virtualization Stack
+Hardware Infrastructure:
+The physical server resources such as CPU, memory, storage, and network.
+Host Operating System:
+The operating system installed directly on the physical hardware.
+Examples: Windows Server, Ubuntu, Red Hat Enterprise Linux.
+Hypervisor:
+Software that creates and manages Virtual Machines (VMs).
+It allocates CPU, memory, storage, and networking to each VM.
+Examples: VMware ESXi, Microsoft Hyper-V, KVM, Oracle VirtualBox.
+Virtual Machines (VMs)
+Each VM contains:
+Guest OS: A complete operating system (Windows, Linux, etc.)
+Dependencies (Deps): Libraries and packages required by the application.
+Application Code: The software being executed.
+
+
+
+| Feature             | Virtual Machines (VMs)                                                                            | Docker Containers                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Isolation**       | **Strong isolation** – Each VM has its own operating system, providing complete isolation.        | **Process-level isolation** – Containers share the host OS kernel.                            |
+| **Size / Overhead** | **Larger** – Includes a full guest OS and virtual hardware, consuming more CPU, RAM, and storage. | **Lightweight** – Shares the host kernel, so it starts faster and uses fewer resources.       |
+| **Portability**     | **Less portable** – May depend on the hypervisor and guest OS configuration.                      | **Highly portable** – Can run consistently across different environments that support Docker. |
+
+
+Running a container from an image
+
+Issue docker run in the CLI.
+CLI sends a request to the host's REST API.
+Docker Host checks if the image is present in the local cache.
+If not, it downloads it from the image registry.
+Docker Host instantiates a new container based on the image.
+
+
+Building and Pushing an Image
+
+Issue docker build in the CLI.
+CLI sends a request to the host's REST API.
+This also includes the respective Dockerfile and build context.
+Docker Host builds the image according to the Dockerfile.
+Docker Host tags the image and stores it locally.
+Issue the docker push command in the CLI.
