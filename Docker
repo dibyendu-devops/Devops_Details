@@ -1,0 +1,14 @@
+Why the container:
+How do containers come to the rescue?
+
+Containers package an application together with all of its dependencies, libraries, runtime, and configuration into a single unit. Because of this, the application runs the same way regardless of the environment (developer laptop, test server, or production).
+
+Benefits of containers:
+
+Simplified setup: Applications can be deployed quickly without manually installing dependencies.
+Portability: The same container image can run on any system that supports a container runtime (such as Docker).
+Consistent environments: Eliminates the "it works on my machine" problem by ensuring identical environments across development, testing, and production.
+Isolation: Each container runs independently, preventing conflicts between applications or their dependencies.
+Efficiency: Containers share the host operating system kernel, making them lighter and faster than traditional virtual machines.
+Better resource control: CPU, memory, and storage limits can be assigned to individual containers, improving resource utilization.
+Easy scalability: Applications can be scaled horizontally by starting multiple container instances, making them well suited for cloud-native and microservices architectures.
