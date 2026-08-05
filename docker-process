@@ -1,1 +1,2 @@
-
+docker run -d -p 8080:80 --name my-web-app nginx:1.27.0
+We have edited the index.html insdie /usr/share/nginx/html
